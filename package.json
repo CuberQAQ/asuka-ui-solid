@@ -1,0 +1,14 @@
+{
+  "name": "@cuberqaq/asuka-solid",
+  "version": "1.0.0",
+  "main": "./dist",
+  "types": "./types",
+  "author": "CuberQAQ",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@cuberqaq/asuka-ui": "link:../AsukaUI"
+  }
+}

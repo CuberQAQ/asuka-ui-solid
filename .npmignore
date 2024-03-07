@@ -1,0 +1,6 @@
+/test
+.prettierrc.*
+.prettierignore
+.gitignore
+/.github
+/docs
