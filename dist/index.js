@@ -20,6 +20,7 @@ export const { render, effect, memo, createComponent, createElement, createTextN
         }
     },
     insertNode(parent, node, anchor) {
+        console.log(`insertNode parent=${parent.nodeName} node=${parent.nodeName}`);
         parent.mountChild(node, anchor);
     },
     removeNode(parent, node) {
@@ -54,8 +55,9 @@ export const { render, effect, memo, createComponent, createElement, createTextN
         return next;
     },
 });
+import * as Solid_1 from "solid-js";
+export { Solid_1 as Solid };
 export * from "@cuberqaq/asuka-ui";
-export * from "solid-js";
 // export function createRenderer() {
 //   return _createRenderer({
 //     createElement(type) {

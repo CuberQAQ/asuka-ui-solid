@@ -7,6 +7,7 @@ import {
   isTextNode,
   assert,
 } from '@cuberqaq/asuka-ui';
+import { createSignal } from 'solid-js';
 
 export const { 
   render,
@@ -39,6 +40,8 @@ export const {
     }
   },
   insertNode(parent, node, anchor) {
+    console.log(`insertNode parent=${parent.nodeName} node=${parent.nodeName}`);
+    
     parent.mountChild(node, anchor);
   },
   removeNode(parent, node) {
@@ -71,8 +74,9 @@ export const {
   },
 });
 
+export * as Solid from "solid-js"
 export * from "@cuberqaq/asuka-ui"
-export * from "solid-js"
+
 // export function createRenderer() {
 //   return _createRenderer({
 //     createElement(type) {

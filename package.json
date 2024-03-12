@@ -9,6 +9,7 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "@cuberqaq/asuka-ui": "link:../AsukaUI"
+    "@cuberqaq/asuka-ui": "link:../AsukaUI",
+    "solid-js": "^1.8.15"
   }
 }
