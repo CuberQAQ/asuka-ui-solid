@@ -55,9 +55,8 @@ export const { render, effect, memo, createComponent, createElement, createTextN
         return next;
     },
 });
-import * as Solid_1 from "solid-js";
-export { Solid_1 as Solid };
-export * from "@cuberqaq/asuka-ui";
+export * from 'solid-js';
+export * from '@cuberqaq/asuka-ui';
 // export function createRenderer() {
 //   return _createRenderer({
 //     createElement(type) {
