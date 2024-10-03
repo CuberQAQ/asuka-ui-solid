@@ -22,6 +22,7 @@ export const {
   mergeProps,
 } = _createRenderer({
   createElement(type) {
+    console.log(`[AsukaUI] createElement type=${type}`);
     assert(AsukaUI.instance != null);
     let core = AsukaUI.instance!;
     let el: AsukaNode | null = core.createNode(type);
@@ -39,14 +40,16 @@ export const {
     }
   },
   insertNode(parent, node, anchor) {
-    console.log(`insertNode parent=${parent.nodeName} node=${parent.nodeName}`);
+    console.log(`[AsukaUI] insertNode parent=${parent.nodeName} node=${node.nodeName} anchor=${anchor?.nodeName}`);
 
     parent.mountChild(node, anchor);
   },
   removeNode(parent, node) {
+    console.log(`[AsukaUI] removeNode parent=${parent.nodeName} node=${node.nodeName}`);
     parent.unmountChild(node);
   },
   setProperty(node, name, value) {
+    console.log(`[AsukaUI] setProperty node=${node.nodeName} name=${name} value=${value}`);
     //   if (name === 'style') Object.assign(node.style, value);
     //   else if (name.startsWith('on')) node[name.toLowerCase()] = value;
     //   else if (PROPERTIES.has(name)) node[name] = value;

@@ -2,6 +2,7 @@ import { createRenderer as _createRenderer } from 'solid-js/universal';
 import { AsukaUI, AsukaUnknownNode, isTextNode, assert, } from '@cuberqaq/asuka-ui';
 export const { render, effect, memo, createComponent, createElement, createTextNode, insertNode, insert, spread, setProp, mergeProps, } = _createRenderer({
     createElement(type) {
+        console.log(`[AsukaUI] createElement type=${type}`);
         assert(AsukaUI.instance != null);
         let core = AsukaUI.instance;
         let el = core.createNode(type);
@@ -20,13 +21,15 @@ export const { render, effect, memo, createComponent, createElement, createTextN
         }
     },
     insertNode(parent, node, anchor) {
-        console.log(`insertNode parent=${parent.nodeName} node=${parent.nodeName}`);
+        console.log(`[AsukaUI] insertNode parent=${parent.nodeName} node=${node.nodeName} anchor=${anchor === null || anchor === void 0 ? void 0 : anchor.nodeName}`);
         parent.mountChild(node, anchor);
     },
     removeNode(parent, node) {
+        console.log(`[AsukaUI] removeNode parent=${parent.nodeName} node=${node.nodeName}`);
         parent.unmountChild(node);
     },
     setProperty(node, name, value) {
+        console.log(`[AsukaUI] setProperty node=${node.nodeName} name=${name} value=${value}`);
         //   if (name === 'style') Object.assign(node.style, value);
         //   else if (name.startsWith('on')) node[name.toLowerCase()] = value;
         //   else if (PROPERTIES.has(name)) node[name] = value;
